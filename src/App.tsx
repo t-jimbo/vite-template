@@ -1,11 +1,13 @@
 import React from "react";
-import { useRoutes } from "react-router-dom";
-import routes from "~react-pages";
+import { Route } from "wouter";
+
+const Index = React.lazy(() => import("./pages/index"));
 
 const App = () => {
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
-      {useRoutes(routes)}
+      <Route path="/" component={Index} />
+      <Route path="/hoge">hogehoge</Route>
     </React.Suspense>
   );
 };

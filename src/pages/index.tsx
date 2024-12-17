@@ -7,9 +7,12 @@ import Link from "@mui/material/Link";
 import viteLogo from "../../public/vite.svg";
 import reactLogo from "@/assets/react.svg";
 import "../logo.css";
+import { useRoute } from "wouter";
 
 const Page: React.FC = () => {
   const [count, setCount] = useState(0);
+
+  const [match, params] = useRoute("/users/:id");
 
   return (
     <Stack alignItems="center" justifyContent="center" height="100vh">
